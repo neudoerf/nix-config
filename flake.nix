@@ -78,8 +78,14 @@
                   programs.fish.shellAliases = {
                     cat = "bat";
                   };
-                  programs.starship.enable = true;
-                  programs.starship.enableFishIntegration = true;
+                  programs.starship = {
+                    enable = true;
+                    enableFishIntegration = true;
+                    settings = {
+                      time.disabled = false;
+                      username.show_always = true;
+                    };
+                  };
                   programs.alacritty = {
                     enable = true;
                     settings.import = [ "${pkgs.alacritty-theme}/tokyo-night.yaml" ];
