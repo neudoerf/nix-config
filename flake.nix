@@ -28,7 +28,7 @@
             '';
             system.keyboard.enableKeyMapping = true;
             system.keyboard.remapCapsLockToControl = true;
-            fonts.fontDir.enable = false; # DANGER - set to true to enable removing fonts
+            fonts.fontDir.enable = true;
             fonts.fonts = [ (pkgs.nerdfonts.override { fonts = [ "Meslo" "FiraCode" ]; }) ];
             services.nix-daemon.enable = true;
             system.defaults.finder.AppleShowAllExtensions = true;
@@ -83,7 +83,7 @@
                   programs.alacritty = {
                     enable = true;
                     settings.import = [ "${pkgs.alacritty-theme}/tokyo-night.yaml" ];
-                    settings.font.normal.family = "FiraCode Nerd Font";
+                    settings.font.normal.family = "FiraCode Nerd Font Mono";
                     settings.font.size = 14;
                     settings.window.dynamic_padding = true;
                     settings.window.decorations = "buttonless";
