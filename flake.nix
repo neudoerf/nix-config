@@ -56,6 +56,7 @@
                   home.stateVersion = "23.11";
                   # specify home-manager configs
                   home.packages = [
+                    pkgs.alacritty-theme
                     pkgs.bat
                     pkgs.curl
                     pkgs.fd
@@ -81,6 +82,7 @@
                   programs.starship.enableFishIntegration = true;
                   programs.alacritty = {
                     enable = true;
+                    settings.import = [ "${pkgs.alacritty-theme}/tokyo-night.yaml" ];
                     settings.font.normal.family = "FiraCode Nerd Font";
                     settings.font.size = 14;
                     settings.window.dynamic_padding = true;
