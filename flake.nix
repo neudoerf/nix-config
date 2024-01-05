@@ -37,14 +37,6 @@
           system.defaults.NSGlobalDomain.InitialKeyRepeat = 14;
           system.defaults.NSGlobalDomain.KeyRepeat = 1;
           system.stateVersion = 4;
-
-          homebrew = {
-            enable = true;
-            caskArgs.no_quarantine = true;
-            global.brewfile = true;
-            masApps = {};
-            casks = [ "raycast" ];
-          };
         })
         inputs.home-manager.darwinModules.home-manager
         {
