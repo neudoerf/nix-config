@@ -11,12 +11,12 @@
   };
 
   outputs = inputs: {
-    darwinConfigurations.pressure-drop = inputs.darwin.lib.darwinSystem {
+    darwinConfigurations.liveware-problem = inputs.darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       pkgs = import inputs.nixpkgs {system = "aarch64-darwin";};
       modules = [
         ({pkgs, ...}: {
-          users.users.tom.home = "/Users/tom";
+          users.users.neudoerf.home = "/Users/neudoerf";
           programs.fish.enable = true;
           environment.shells = [pkgs.bash pkgs.fish];
           environment.loginShell = pkgs.fish;
@@ -43,7 +43,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.tom.imports = [
+            users.neudoerf.imports = [
               ({pkgs, ...}: {
                 home = {
                   stateVersion = "23.11";
