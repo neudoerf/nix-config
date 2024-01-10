@@ -17,11 +17,10 @@
       modules = [
         ({pkgs, ...}: {
           users.users.neudoerf.home = "/Users/neudoerf";
-          programs.fish.enable = true;
-          environment.shells = [pkgs.bash pkgs.fish];
-          environment.loginShell = pkgs.fish;
-          environment.systemPackages = [pkgs.coreutils pkgs.rectangle];
-          environment.systemPath = ["/opt/homebrew/bin"];
+          programs.zsh.enable = true;
+          environment.shells = [ pkgs.bash pkgs.zsh ];
+          environment.loginShell = pkgs.zsh;
+          environment.systemPackages = [ pkgs.coreutils pkgs.rectangle ];
           nix.extraOptions = ''
             experimental-features = nix-command flakes
           '';
@@ -33,6 +32,7 @@
           system.defaults.finder.AppleShowAllExtensions = true;
           system.defaults.finder._FXShowPosixPathInTitle = true;
           system.defaults.dock.autohide = true;
+          system.defaults.dock.orientation = "left";
           system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
           system.defaults.NSGlobalDomain.InitialKeyRepeat = 14;
           system.defaults.NSGlobalDomain.KeyRepeat = 1;
@@ -49,14 +49,14 @@
                   stateVersion = "23.11";
                   # specify home-manager configs
                   packages = [
-                    pkgs.alacritty-theme
+                    # pkgs.alacritty-theme
                     pkgs.bat
                     pkgs.curl
                     pkgs.fd
+		    pkgs.htop
                     pkgs.jq
                     pkgs.less
                     pkgs.ripgrep
-                    pkgs.rustup
                   ];
                   sessionVariables = {
                     PAGER = "bat";
@@ -66,19 +66,19 @@
                 programs = {
                   fzf = {
                     enable = true;
-                    enableFishIntegration = true;
+                    enableZshIntegration = true;
                   };
                   eza.enable = true;
                   eza.enableAliases = true;
                   git.enable = true;
-                  fish.enable = true;
+                  zsh.enable = true;
                   neovim.enable = true;
-                  fish.shellAliases = {
+                  zsh.shellAliases = {
                     cat = "bat";
                   };
                   starship = {
                     enable = true;
-                    enableFishIntegration = true;
+                    enableZshIntegration = true;
                     settings = {
                       time.disabled = false;
                       username.show_always = true;
@@ -87,7 +87,7 @@
                   alacritty = {
                     enable = true;
                     settings = {
-                      import = ["${pkgs.alacritty-theme}/tokyo-night.yaml"];
+                      # import = ["${pkgs.alacritty-theme}/tokyo-night.yaml"];
                       font = {
                         normal.family = "FiraCode Nerd Font Mono";
                         size = 14;
