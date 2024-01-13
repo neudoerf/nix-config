@@ -18,9 +18,9 @@
         ({pkgs, ...}: {
           users.users.neudoerf.home = "/Users/neudoerf";
           programs.zsh.enable = true;
-          environment.shells = [ pkgs.bash pkgs.zsh ];
+          environment.shells = [pkgs.bash pkgs.zsh];
           environment.loginShell = pkgs.zsh;
-          environment.systemPackages = [ pkgs.coreutils pkgs.rectangle ];
+          environment.systemPackages = [pkgs.coreutils pkgs.rectangle];
           nix.extraOptions = ''
             experimental-features = nix-command flakes
           '';
@@ -49,18 +49,19 @@
                   stateVersion = "23.11";
                   # specify home-manager configs
                   packages = [
-                    # pkgs.alacritty-theme
+                    pkgs.alacritty-theme
                     pkgs.bat
                     pkgs.curl
                     pkgs.fd
-		    pkgs.htop
+                    pkgs.htop
                     pkgs.jq
                     pkgs.less
                     pkgs.ripgrep
                   ];
                   sessionVariables = {
-                    PAGER = "bat";
                     EDITOR = "nvim";
+                    NIX_SHELL_PRESERVE_PROMPT = 1;
+                    PAGER = "bat";
                   };
                 };
                 programs = {
@@ -71,11 +72,13 @@
                   eza.enable = true;
                   eza.enableAliases = true;
                   git.enable = true;
-                  zsh.enable = true;
-                  neovim.enable = true;
-                  zsh.shellAliases = {
-                    cat = "bat";
+                  zsh = {
+                    enable = true;
+                    shellAliases = {
+                      cat = "bat";
+                    };
                   };
+                  neovim.enable = true;
                   starship = {
                     enable = true;
                     enableZshIntegration = true;
@@ -87,7 +90,7 @@
                   alacritty = {
                     enable = true;
                     settings = {
-                      # import = ["${pkgs.alacritty-theme}/tokyo-night.yaml"];
+                      import = ["${pkgs.alacritty-theme}/tokyo-night.toml"];
                       font = {
                         normal.family = "FiraCode Nerd Font Mono";
                         size = 14;
