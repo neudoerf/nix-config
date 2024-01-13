@@ -27,7 +27,7 @@
           system.keyboard.enableKeyMapping = true;
           system.keyboard.remapCapsLockToControl = true;
           fonts.fontDir.enable = true;
-          fonts.fonts = [(pkgs.nerdfonts.override {fonts = ["Meslo" "FiraCode"];})];
+          fonts.fonts = [(pkgs.nerdfonts.override {fonts = ["FiraCode" "Hack" "Meslo"];})];
           services.nix-daemon.enable = true;
           system.defaults.finder.AppleShowAllExtensions = true;
           system.defaults.finder._FXShowPosixPathInTitle = true;
@@ -92,7 +92,7 @@
                     settings = {
                       import = ["${pkgs.alacritty-theme}/tokyo-night.toml"];
                       font = {
-                        normal.family = "FiraCode Nerd Font Mono";
+                        normal.family = "Hack Nerd Font";
                         size = 14;
                       };
                       window = {
