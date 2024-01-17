@@ -18,25 +18,37 @@
         ({pkgs, ...}: {
           users.users.neudoerf.home = "/Users/neudoerf";
           programs.zsh.enable = true;
-          environment.shells = [pkgs.bash pkgs.zsh];
-          environment.loginShell = pkgs.zsh;
-          environment.systemPackages = [pkgs.coreutils pkgs.rectangle];
+          environment = {
+            shells = [pkgs.bash pkgs.zsh];
+            loginShell = pkgs.zsh;
+            systemPackages = [pkgs.coreutils pkgs.rectangle];
+          };
           nix.extraOptions = ''
             experimental-features = nix-command flakes
           '';
-          system.keyboard.enableKeyMapping = true;
-          system.keyboard.remapCapsLockToControl = true;
-          fonts.fontDir.enable = true;
-          fonts.fonts = [(pkgs.nerdfonts.override {fonts = ["FiraCode" "Hack" "Meslo"];})];
+          system = {
+            "stateVersion" = 4;
+            defaults = {
+              finder.AppleShowAllExtensions = true;
+              finder._FXShowPosixPathInTitle = true;
+              dock.autohide = true;
+              dock.orientation = "left";
+              NSGlobalDomain = {
+                AppleShowAllExtensions = true;
+                InitialKeyRepeat = 14;
+                KeyRepeat = 1;
+              };
+            };
+            keyboard = {
+              enableKeyMapping = true;
+              remapCapsLockToControl = true;
+            };
+          };
+          fonts = {
+            fontDir.enable = true;
+            fonts = [(pkgs.nerdfonts.override {fonts = ["FiraCode" "Hack" "Meslo"];})];
+          };
           services.nix-daemon.enable = true;
-          system.defaults.finder.AppleShowAllExtensions = true;
-          system.defaults.finder._FXShowPosixPathInTitle = true;
-          system.defaults.dock.autohide = true;
-          system.defaults.dock.orientation = "left";
-          system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
-          system.defaults.NSGlobalDomain.InitialKeyRepeat = 14;
-          system.defaults.NSGlobalDomain.KeyRepeat = 1;
-          system.stateVersion = 4;
         })
         inputs.home-manager.darwinModules.home-manager
         {
@@ -65,9 +77,15 @@
                   };
                 };
                 programs = {
-                  fzf = {
+                  atuin = {
                     enable = true;
                     enableZshIntegration = true;
+                    settings = {
+                      enter_accept = true;
+                    };
+                  };
+                  fzf = {
+                    enable = true;
                   };
                   eza.enable = true;
                   eza.enableAliases = true;
