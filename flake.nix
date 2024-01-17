@@ -65,6 +65,7 @@
                     pkgs.bat
                     pkgs.curl
                     pkgs.fd
+                    pkgs.helix
                     pkgs.htop
                     pkgs.jq
                     pkgs.less
