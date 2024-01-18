@@ -13,15 +13,15 @@
   outputs = inputs: {
     darwinConfigurations.liveware-problem = inputs.darwin.lib.darwinSystem {
       system = "aarch64-darwin";
-      pkgs = import inputs.nixpkgs {system = "aarch64-darwin";};
+      pkgs = import inputs.nixpkgs { system = "aarch64-darwin"; };
       modules = [
-        ({pkgs, ...}: {
+        ({ pkgs, ... }: {
           users.users.neudoerf.home = "/Users/neudoerf";
           programs.zsh.enable = true;
           environment = {
-            shells = [pkgs.bash pkgs.zsh];
+            shells = [ pkgs.bash pkgs.zsh ];
             loginShell = pkgs.zsh;
-            systemPackages = [pkgs.coreutils pkgs.rectangle];
+            systemPackages = [ pkgs.coreutils pkgs.rectangle ];
           };
           nix.extraOptions = ''
             experimental-features = nix-command flakes
@@ -46,7 +46,7 @@
           };
           fonts = {
             fontDir.enable = true;
-            fonts = [(pkgs.nerdfonts.override {fonts = ["FiraCode" "Hack" "Meslo"];})];
+            fonts = [ (pkgs.nerdfonts.override { fonts = [ "FiraCode" "Hack" "Meslo" ]; }) ];
           };
           services.nix-daemon.enable = true;
         })
@@ -56,7 +56,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             users.neudoerf.imports = [
-              ({pkgs, ...}: {
+              ({ pkgs, ... }: {
                 home = {
                   stateVersion = "23.11";
                   # specify home-manager configs
@@ -65,14 +65,14 @@
                     pkgs.bat
                     pkgs.curl
                     pkgs.fd
-                    pkgs.helix
                     pkgs.htop
                     pkgs.jq
                     pkgs.less
+                    pkgs.nil
+                    pkgs.nixpkgs-fmt
                     pkgs.ripgrep
                   ];
                   sessionVariables = {
-                    EDITOR = "nvim";
                     NIX_SHELL_PRESERVE_PROMPT = 1;
                     PAGER = "bat";
                   };
@@ -97,6 +97,29 @@
                       cat = "bat";
                     };
                   };
+                  helix = {
+                    enable = true;
+                    defaultEditor = true;
+                    languages = {
+                      language = [{
+                        name = "nix";
+                        auto-format = true;
+                        formatter = {
+                          command = "nixpkgs-fmt";
+                        };
+                      }];
+                    };
+                    settings = {
+                      theme = "tokyonight";
+                      editor = {
+                        cursor-shape = {
+                          insert = "bar";
+                          normal = "underline";
+                          select = "block";
+                        };
+                      };
+                    };
+                  };
                   neovim.enable = true;
                   starship = {
                     enable = true;
@@ -109,7 +132,7 @@
                   alacritty = {
                     enable = true;
                     settings = {
-                      import = ["${pkgs.alacritty-theme}/tokyo-night.toml"];
+                      import = [ "${pkgs.alacritty-theme}/tokyo-night.toml" ];
                       font = {
                         normal.family = "Hack Nerd Font";
                         size = 14;
