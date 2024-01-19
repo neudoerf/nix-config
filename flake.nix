@@ -68,8 +68,16 @@
           pkgs = nixpkgs.legacyPackages.aarch64-darwin;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
-            ./home-manager/liveware-problem.nix
             ./home-manager/home.nix
+            ./home-manager/liveware-problem.nix
+          ];
+        };
+        "tneudoerffer@CPR02349L" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            ./home-manager/home.nix
+            ./home-manager/cpr02349l.nix
           ];
         };
       };
