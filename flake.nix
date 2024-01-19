@@ -68,6 +68,7 @@
           pkgs = nixpkgs.legacyPackages.aarch64-darwin;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
+            ./home-manager/liveware-problem.nix
             ./home-manager/home.nix
           ];
         };

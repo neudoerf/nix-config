@@ -1,7 +1,5 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
   home = {
-    username = "neudoerf";
-    homeDirectory = "/Users/neudoerf";
     stateVersion = "23.11";
     packages = with pkgs; [
       alacritty-theme
