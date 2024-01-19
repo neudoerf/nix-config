@@ -58,6 +58,7 @@
             normal = "underline";
             select = "block";
           };
+          line-number = "relative";
         };
       };
     };
