@@ -57,6 +57,7 @@
             select = "block";
           };
           line-number = "relative";
+          lsp.display-inlay-hints = true;
         };
       };
     };
