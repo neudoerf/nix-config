@@ -7,7 +7,11 @@
   programs = {
     alacritty = {
       settings = {
-        window.decorations = lib.mkForce "full";
+        font.size = lib.mkForce 12;
+        shell = "zsh";
+        window = lib.mkForce {
+          decorations = "None";
+        };
       };
     };
     zsh = {
