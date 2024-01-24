@@ -11,6 +11,10 @@
         shell = "zsh";
         window = lib.mkForce {
           decorations = "None";
+          padding = {
+            x = 5;
+            y = 5;
+          };
         };
       };
     };
