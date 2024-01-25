@@ -9,6 +9,7 @@
       htop
       jq
       less
+      marksman
       nil
       nixpkgs-fmt
       ripgrep
@@ -40,13 +41,19 @@
       enable = true;
       defaultEditor = true;
       languages = {
-        language = [{
-          name = "nix";
-          auto-format = true;
-          formatter = {
-            command = "nixpkgs-fmt";
-          };
-        }];
+        language = [
+          {
+            name = "nix";
+            auto-format = true;
+            formatter = {
+              command = "nixpkgs-fmt";
+            };
+          }
+          {
+            name = "markdown";
+            soft-wrap.enable = true;
+          }
+        ];
       };
       settings = {
         theme = "tokyonight";
