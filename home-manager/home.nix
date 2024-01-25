@@ -106,9 +106,9 @@
         fossil_branch.format = "[$symbol$branch]($style) ";
         fossil_branch.symbol = " ";
         gcloud.format = "[$symbol$account(@$domain)(\\($region\\))]($style) ";
-        git_branch.format = "[$symbol$branch]($style)";
+        git_branch.format = "[$symbol$branch]($style) ";
         git_branch.symbol = " ";
-        git_status.format = " ([\\[$all_status$ahead_behind\\]]($style)) ";
+        git_status.format = "([\\[$all_status$ahead_behind\\] ]($style))";
         golang.format = "[$symbol($version)]($style) ";
         golang.symbol = " ";
         gradle.format = "[$symbol($version)]($style) ";
