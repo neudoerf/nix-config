@@ -18,9 +18,9 @@
         };
       };
     };
-    zsh = {
-      sessionVariables = {
-        SHELL = "zsh";
+    zellij = {
+      settings = {
+        default_shell = "zsh";
       };
     };
   };
