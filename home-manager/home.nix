@@ -26,6 +26,7 @@
     };
     fzf = {
       enable = true;
+      enableZshIntegration = false;
     };
     eza.enable = true;
     eza.enableAliases = true;
