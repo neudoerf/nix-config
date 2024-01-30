@@ -8,9 +8,14 @@
 
     darwin.url = "github:lnl7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixgl = {
+      url = "github:guibou/nixGL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, nixgl, ... } @ inputs:
     let
       inherit (self) outputs;
       systems = [
@@ -72,9 +77,13 @@
             ./home-manager/liveware-problem.nix
           ];
         };
-        "tneudoerffer@CPR02349L" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
+        "tneudoerffer@CPR02349L" = home-manager.lib.homeManagerConfiguration rec {
+          # pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            overlays = [ nixgl.overlay ];
+          };
+          extraSpecialArgs = { inherit inputs outputs pkgs; };
           modules = [
             ./home-manager/home.nix
             ./home-manager/cpr02349l.nix
