@@ -231,7 +231,7 @@
     alacritty = {
       enable = true;
       settings = {
-        import = [ "${pkgs.alacritty-theme}/tokyo-night.toml" ];
+        import = [ "${pkgs.alacritty-theme}/dracula.toml" ];
         font = {
           normal.family = "Hack Nerd Font";
           size = 14;
@@ -248,8 +248,8 @@
       enable = true;
       settings = {
         pane_frames = false;
-        theme = "custom";
-        themes.custom = {
+        theme = "dracula";
+        themes.tokyonight = {
           fg = "#a9b1d6";
           bg = "#1a1b26";
           black = "#383e5a";
