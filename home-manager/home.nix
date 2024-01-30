@@ -1,4 +1,4 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{ pkgs, ... }: {
   home = {
     stateVersion = "23.11";
     packages = with pkgs; [
@@ -65,7 +65,10 @@
             select = "block";
           };
           line-number = "relative";
+          cursorline = true;
+          bufferline = "multiple";
           lsp.display-inlay-hints = true;
+          indent-guides.render = true;
         };
       };
     };
