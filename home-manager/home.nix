@@ -9,6 +9,7 @@
       htop
       jq
       less
+      lf
       marksman
       neovide
       nil
