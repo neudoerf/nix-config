@@ -11,6 +11,7 @@
       less
       marksman
       nil
+      nix-index
       nixpkgs-fmt
       ripgrep
     ];
@@ -86,7 +87,7 @@
         c.symbol = " ";
         conda.symbol = " ";
         cmake.format = "[$symbol($version)]($style) ";
-        cmd_duration.format = "[⏱ $duration]($style) ";
+        cmd_duration.format = "[󰔟 $duration]($style) ";
         cobol.format = "[$symbol($version)]($style) ";
         conda.format = "[$symbol$environment]($style) ";
         crystal.format = "[$symbol($version)]($style) ";
@@ -233,7 +234,7 @@
       settings = {
         # import = [ "${pkgs.alacritty-theme}/dracula.toml" ];
         font = {
-          normal.family = "Hack Nerd Font";
+          normal.family = "IosevkaCustom Nerd Font";
           size = 14;
         };
         window = {
