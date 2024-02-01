@@ -10,6 +10,7 @@
       jq
       less
       marksman
+      neovide
       nil
       nix-index
       nixpkgs-fmt
