@@ -58,7 +58,7 @@
         ];
       };
       settings = {
-        theme = "tokyonight";
+        theme = "dracula";
         editor = {
           cursor-shape = {
             insert = "bar";
