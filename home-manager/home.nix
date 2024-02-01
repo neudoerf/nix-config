@@ -14,6 +14,7 @@
       nil
       nix-index
       nixpkgs-fmt
+      nnn
       ripgrep
     ];
   };
