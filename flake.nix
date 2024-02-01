@@ -61,7 +61,7 @@
             };
             fonts = {
               fontDir.enable = true;
-              fonts = [ (pkgs.nerdfonts.override { fonts = [ "FiraCode" "Hack" "Meslo" ]; }) ];
+              fonts = [ (pkgs.nerdfonts.override { fonts = [ "FiraCode" "Hack" "Iosevka" "Meslo" ]; }) ];
             };
             services.nix-daemon.enable = true;
           })
