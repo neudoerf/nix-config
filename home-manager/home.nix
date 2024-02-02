@@ -237,7 +237,7 @@
       settings = {
         # import = [ "${pkgs.alacritty-theme}/dracula.toml" ];
         font = {
-          normal.family = "IosevkaCustom Nerd Font";
+          normal.family = "Hack Nerd Font";
           size = 14;
         };
         window = {
