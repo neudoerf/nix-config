@@ -1,0 +1,6 @@
+[buildPlans.iosevka-neudoerf]
+family = "Iosevka Neudoerf"
+spacing = "fixed"
+serifs = "sans"
+noCvSs = false
+exportGlyphNames = true

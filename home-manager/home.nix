@@ -1,4 +1,9 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  iosevka-neudoerf = pkgs.callPackage ./iosevka-neudoerf { };
+in
+{
+  fonts.fontconfig.enable = true;
   home = {
     stateVersion = "23.11";
     packages = with pkgs; [
@@ -7,6 +12,7 @@
       curl
       fd
       htop
+      iosevka-neudoerf
       jq
       less
       lf
@@ -237,7 +243,7 @@
       settings = {
         # import = [ "${pkgs.alacritty-theme}/dracula.toml" ];
         font = {
-          normal.family = "Hack Nerd Font";
+          normal.family = "IosevkaNeudoerf Nerd Font";
           size = 14;
         };
         window = {
