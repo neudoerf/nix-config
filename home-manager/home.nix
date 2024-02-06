@@ -143,7 +143,7 @@ in
         kotlin.format = "[$symbol($version)]($style) ";
         kotlin.symbol = " ";
         kubernetes.format = "[$symbol$context( \\($namespace\\))]($style) ";
-        lua.format = "[$symbol($version)]($style)\]";
+        lua.format = "[$symbol($version)]($style) ";
         lua.symbol = " ";
         memory_usage.format = "[$symbol($version)]($style) ";
         memory_usage.symbol = "󰍛 ";
