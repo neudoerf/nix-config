@@ -28,6 +28,7 @@ in
   programs = {
     alacritty = {
       settings = {
+        env.TERM = "xterm-256color";
         font.size = lib.mkForce 12;
         shell = "zsh";
         window = lib.mkForce {
