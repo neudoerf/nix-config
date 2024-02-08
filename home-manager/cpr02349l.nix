@@ -22,7 +22,7 @@ in
     username = "tneudoerffer";
     homeDirectory = "/home/tneudoerffer";
     packages =
-      (with pkgs.nixgl; [ nixGLIntel ]) ++ [ alacritty-desktop ];
+      [ pkgs.nixgl.nixGLIntel alacritty-desktop pkgs.iosevka-comfy.comfy-fixed pkgs.iosevka-comfy.comfy-duo ];
   };
 
   programs = {
