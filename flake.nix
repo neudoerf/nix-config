@@ -69,12 +69,12 @@
       };
 
       homeConfigurations = {
-        "neudoerf@liveware-problem" = home-manager.lib.homeManagerConfiguration {
+        "neudoerf@nostalgia-for-infinity" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.aarch64-darwin;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home-manager/home.nix
-            ./home-manager/liveware-problem.nix
+            ./home-manager/nostalgia-for-infinity.nix
           ];
         };
         "tneudoerffer@CPR02349L" = home-manager.lib.homeManagerConfiguration rec {
