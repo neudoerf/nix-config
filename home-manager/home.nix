@@ -325,19 +325,19 @@ in
       enable = true;
       settings = {
         pane_frames = false;
-        theme = "dracula";
-        themes.tokyonight = {
-          fg = "#a9b1d6";
-          bg = "#1a1b26";
-          black = "#383e5a";
-          red = "#f93357";
-          green = "#9ece6a";
-          yellow = "#e0af68";
-          blue = "#7aa2f7";
-          magenta = "#bb9af7";
-          cyan = "#2ac3de";
-          white = "#c0caf5";
-          orange = "#ff9e64";
+        theme = "draculapro";
+        themes.draculapro = {
+          fg = "#f8f8f2";
+          bg = "#22212c";
+          black = "#7970a9";
+          red = "#ff9580";
+          green = "#8aff80";
+          yellow = "#ffff80";
+          blue = "#9580ff";
+          magenta = "#ff80bf";
+          cyan = "#80ffea";
+          white = "#f8f8f2";
+          orange = "#ffca80";
         };
       };
     };
