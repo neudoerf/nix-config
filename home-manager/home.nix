@@ -135,6 +135,8 @@ in
         helm.format = "[$symbol($version)]($style) ";
         hg_branch.format = "[$symbol$branch]($style) ";
         hg_branch.symbol = " ";
+        hostname.format = "[$ssh_symbol$hostname]($style) ";
+        hostname.ssh_only = false;
         hostname.ssh_symbol = " ";
         java.format = "[$symbol($version)]($style) ";
         java.symbol = " ";
