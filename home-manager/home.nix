@@ -67,7 +67,7 @@ in
         ];
       };
       settings = {
-        theme = "dracula";
+        theme = "tokyonight";
         editor = {
           cursor-shape = {
             insert = "bar";
@@ -243,7 +243,7 @@ in
     alacritty = {
       enable = true;
       settings = {
-        # import = [ "${pkgs.alacritty-theme}/dracula.toml" ];
+        import = [ "${pkgs.alacritty-theme}/tokyo-night.toml" ];
         font = {
           normal.family = "IosevkaNeudoerf Nerd Font";
           size = 14;
@@ -254,80 +254,13 @@ in
           option_as_alt = "Both";
         };
         cursor.style.shape = "Underline";
-        colors = {
-          primary = {
-            background = "#22212C";
-            foreground = "#F8F8F2";
-            bright_foreground = "#FFFFFF";
-          };
-          cursor = {
-            text = "CellBackground";
-            cursor = "CellForeground";
-          };
-          vi_mode_cursor = {
-            text = "CellBackground";
-            cursor = "CellForeground";
-          };
-          search = {
-            matches = {
-              foreground = "#454158";
-              background = "#8AFF80";
-            };
-            focused_match = {
-              foreground = "#454158";
-              background = "#FFCA80";
-            };
-          };
-          footer_bar = {
-            background = "#22212C";
-            foreground = "#F8F8F2";
-          };
-          hints = {
-            start = {
-              foreground = "#22212C";
-              background = "#FFFF80";
-            };
-            end = {
-              foreground = "#FFFF80";
-              background = "#22212C";
-            };
-          };
-          line_indicator = {
-            foreground = "None";
-            background = "None";
-          };
-          selection = {
-            text = "CellForeground";
-            background = "#454158";
-          };
-          normal = {
-            black = "#7970A9";
-            red = "#FF9580";
-            green = "#8AFF80";
-            yellow = "#FFFF80";
-            blue = "#9580FF";
-            magenta = "#FF80BF";
-            cyan = "#80FFEA";
-            white = "#F8F8F2";
-          };
-          bright = {
-            black = "#7970A9";
-            red = "#FFAA99";
-            green = "#A2FF99";
-            yellow = "#FFFF99";
-            blue = "#AA99FF";
-            magenta = "#FF99CC";
-            cyan = "#99FFEE";
-            white = "#FFFFFF";
-          };
-        };
       };
     };
     zellij = {
       enable = true;
       settings = {
         pane_frames = false;
-        theme = "draculapro";
+        theme = "tokyo-night-dark";
         themes.draculapro = {
           fg = "#f8f8f2";
           bg = "#22212c";
