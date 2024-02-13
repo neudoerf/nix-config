@@ -83,7 +83,10 @@ in
       };
     };
     home-manager.enable = true;
-    neovim.enable = true;
+    neovim = {
+      enable = true;
+      extraLuaConfig = pkgs.lib.readFile ./neovim/init.lua;
+    };
     starship = {
       enable = true;
       enableZshIntegration = true;
