@@ -67,7 +67,7 @@ in
         ];
       };
       settings = {
-        theme = "tokyonight";
+        theme = "everforest_dark";
         editor = {
           cursor-shape = {
             insert = "bar";
@@ -243,7 +243,7 @@ in
     alacritty = {
       enable = true;
       settings = {
-        import = [ "${pkgs.alacritty-theme}/tokyo-night.toml" ];
+        import = [ "${pkgs.alacritty-theme}/everforest_dark.toml" ];
         font = {
           normal.family = "IosevkaNeudoerf Nerd Font";
           size = 14;
@@ -260,7 +260,7 @@ in
       enable = true;
       settings = {
         pane_frames = false;
-        theme = "tokyo-night-dark";
+        theme = "everforest-dark";
         themes.draculapro = {
           fg = "#f8f8f2";
           bg = "#22212c";
