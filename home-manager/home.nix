@@ -34,6 +34,12 @@ in
         enter_accept = true;
       };
     };
+    btop = {
+      enable = true;
+      settings = {
+        theme = "everforest-dark-medium";
+      };
+    };
     fzf = {
       enable = true;
       enableZshIntegration = false;
