@@ -616,6 +616,12 @@ local servers = {
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
+  nil_ls = {
+    ['nil'] = {
+      formatting = { command = { "nixpkgs-fmt" } },
+    },
+  },
+
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -703,8 +709,8 @@ cmp.setup {
   },
 }
 
-require('lspconfig').nil_ls.setup { on_attach = on_attach }
-require('lspconfig').marksman.setup { on_attach = on_attach }
+-- require('lspconfig').nil_ls.setup { on_attach = on_attach }
+-- require('lspconfig').marksman.setup { on_attach = on_attach }
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
