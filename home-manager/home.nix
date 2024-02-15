@@ -37,7 +37,8 @@ in
     btop = {
       enable = true;
       settings = {
-        theme = "everforest-dark-medium";
+        color_theme = "everforest-dark-hard";
+        vim_keys = true;
       };
     };
     fzf = {
