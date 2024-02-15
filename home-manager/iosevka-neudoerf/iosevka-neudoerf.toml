@@ -4,3 +4,9 @@ spacing = "fixed"
 serifs = "sans"
 noCvSs = false
 exportGlyphNames = true
+
+  [buildPlans.iosevka-neudoerf.variants]
+  inherits = "ss07"
+
+    [buildPlans.iosevka-neudoerf.variants.design]
+    zero = "slashed"
