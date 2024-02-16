@@ -47,7 +47,12 @@ in
     };
     eza.enable = true;
     eza.enableAliases = true;
-    git.enable = true;
+    git = {
+      enable = true;
+      delta.enable = true;
+      userEmail = "tom@neudoerffer.com";
+      userName = "Tom Neudoerffer";
+    };
     zsh = {
       enable = true;
       shellAliases = {
