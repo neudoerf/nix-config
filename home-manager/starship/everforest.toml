@@ -1,39 +1,26 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](color_orange)\
+[](red)\
 $os\
 $username\
-[](bg:color_yellow fg:color_orange)\
+[](fg:red bg:yellow)\
 $hostname\
-[](fg:color_yellow bg:color_aqua)\
+[](fg:yellow bg:green)\
 $directory\
-[](fg:color_aqua bg:color_blue)\
+[](fg:green bg:cyan)\
 $git_branch\
 $git_status\
-[](fg:color_blue bg:color_bg1)\
+[](fg:cyan bg:blue)\
+$nix_shell\
+[](fg:blue bg:purple)\
 $time\
-[ ](fg:color_bg1)\
+[ ](fg:purple)\
 $line_break$character"""
-
-palette = 'everforest'
-
-[palettes.everforest]
-color_aqua = "#83c092"
-color_bg1 = "#343f44"
-color_bg3 = "#475258"
-color_blue = "#7fbbb3"
-color_fg0 = "#232a2e"
-color_fg1 = "#d3c6aa"
-color_green = "#a7c080"
-color_orange = "#e69875"
-color_purple = "#d699b6"
-color_red = "#e67e80"
-color_yellow = "#dbbc7f"
 
 [os]
 disabled = false
-style = "bg:color_orange fg:color_fg0"
+style = "bg:red fg:black"
 
 [os.symbols]
 Windows = "󰍲"
@@ -58,16 +45,16 @@ RedHatEnterprise = "󱄛"
 
 [username]
 show_always = true
-style_user = "bg:color_orange fg:color_fg0"
-style_root = "bg:color_orange fg:color_fg0"
+style_user = "bg:red fg:black"
+style_root = "bg:red fg:black"
 format = '[ $user ]($style)'
 
 [hostname]
 ssh_only = false
-format = '[ $hostname ](bg:color_yellow fg:color_fg0)'
+format = '[ $hostname ](bg:yellow fg:black)'
 
 [directory]
-style = "fg:color_fg0 bg:color_aqua"
+style = "fg:black bg:green"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -81,18 +68,23 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol $branch ](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:cyan"
+format = '[[ $symbol $branch ](fg:black bg:cyan)]($style)'
 
 [git_status]
-style = "bg:color_blue"
-format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:cyan"
+format = '[[($all_status$ahead_behind )](fg:black bg:cyan)]($style)'
+
+[nix_shell]
+style = "bg:blue fg:black"
+format = "[ $symbol$state ]($style)"
+symbol = " "
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:color_bg1"
-format = '[[   $time ](fg:color_fg1 bg:color_bg1)]($style)'
+style = "bg:purple"
+format = '[[   $time ](fg:black bg:purple)]($style)'
 
 [line_break]
 disabled = false
