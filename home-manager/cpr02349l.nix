@@ -22,8 +22,7 @@ in
     username = "tneudoerffer";
     homeDirectory = "/home/tneudoerffer";
     packages =
-      [ pkgs.nixgl.nixGLIntel alacritty-desktop pkgs.iosevka-comfy.comfy-fixed pkgs.iosevka-comfy.comfy-duo ];
-    sessionPath = [ "$HOME/.local/bin/" ];
+      [ pkgs.nixgl.nixGLIntel alacritty-desktop pkgs.iosevka-comfy.comfy-fixed pkgs.iosevka-comfy.comfy-duo pkgs.poetry ];
   };
 
   programs = {
