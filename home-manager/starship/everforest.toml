@@ -4,13 +4,14 @@ format = """
 [](color_orange)\
 $os\
 $username\
-$hostname\
 [](bg:color_yellow fg:color_orange)\
-$directory\
+$hostname\
 [](fg:color_yellow bg:color_aqua)\
+$directory\
+[](fg:color_aqua bg:color_blue)\
 $git_branch\
 $git_status\
-[](fg:color_aqua bg:color_bg1)\
+[](fg:color_blue bg:color_bg1)\
 $time\
 [ ](fg:color_bg1)\
 $line_break$character"""
@@ -59,14 +60,14 @@ RedHatEnterprise = "󱄛"
 show_always = true
 style_user = "bg:color_orange fg:color_fg0"
 style_root = "bg:color_orange fg:color_fg0"
-format = '[ $user@]($style)'
+format = '[ $user ]($style)'
 
 [hostname]
 ssh_only = false
-format = '[$hostname ](bg:color_orange fg:color_fg0)'
+format = '[ $hostname ](bg:color_yellow fg:color_fg0)'
 
 [directory]
-style = "fg:color_fg0 bg:color_yellow"
+style = "fg:color_fg0 bg:color_aqua"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -80,12 +81,12 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:color_aqua"
-format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
+style = "bg:color_blue"
+format = '[[ $symbol $branch ](fg:color_fg0 bg:color_blue)]($style)'
 
 [git_status]
-style = "bg:color_aqua"
-format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
+style = "bg:color_blue"
+format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_blue)]($style)'
 
 [time]
 disabled = false
