@@ -34,8 +34,8 @@ in
         window = lib.mkForce {
           decorations = "None";
           padding = {
-            x = 5;
-            y = 5;
+            x = 12;
+            y = 12;
           };
         };
       };
