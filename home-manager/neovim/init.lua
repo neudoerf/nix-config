@@ -285,8 +285,9 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 vim.o.scrolloff = 5
+vim.o.relativenumber = true
 
-vim.g.everforest_background = 'hard'
+vim.g.everforest_background = 'medium'
 
 vim.cmd 'colorscheme everforest'
 
