@@ -29,6 +29,22 @@ in
   xdg.configFile."starship.toml".source = ./starship/everforest.toml;
 
   programs = {
+    alacritty = {
+      enable = true;
+      settings = {
+        import = [ "${pkgs.alacritty-theme}/everforest_dark.toml" ];
+        font = {
+          normal.family = "IosevkaNeudoerf Nerd Font";
+          size = 14;
+        };
+        window = {
+          dynamic_padding = true;
+          decorations = "buttonless";
+          option_as_alt = "Both";
+        };
+        cursor.style.shape = "Underline";
+      };
+    };
     atuin = {
       enable = true;
       enableZshIntegration = true;
@@ -43,28 +59,22 @@ in
         vim_keys = true;
       };
     };
+    eza = {
+      enable = true;
+      enableAliases = true;
+    };
     fzf = {
       enable = true;
       enableZshIntegration = false;
     };
-    eza.enable = true;
-    eza.enableAliases = true;
     git = {
       enable = true;
       delta.enable = true;
       userEmail = "tom@neudoerffer.com";
       userName = "Tom Neudoerffer";
     };
-    zsh = {
-      enable = true;
-      shellAliases = {
-        PAGER = "bat";
-        cat = "bat";
-      };
-    };
     helix = {
       enable = true;
-      defaultEditor = true;
       languages = {
         language = [
           {
@@ -99,28 +109,12 @@ in
     home-manager.enable = true;
     neovim = {
       enable = true;
+      defaultEditor = true;
       extraLuaConfig = pkgs.lib.readFile ./neovim/init.lua;
     };
     starship = {
       enable = true;
       enableZshIntegration = true;
-      # settings = pkgs.lib.readFile ./starship/everforest.toml;
-    };
-    alacritty = {
-      enable = true;
-      settings = {
-        import = [ "${pkgs.alacritty-theme}/everforest_dark.toml" ];
-        font = {
-          normal.family = "IosevkaNeudoerf Nerd Font";
-          size = 14;
-        };
-        window = {
-          dynamic_padding = true;
-          decorations = "buttonless";
-          option_as_alt = "Both";
-        };
-        cursor.style.shape = "Underline";
-      };
     };
     zellij = {
       enable = true;
@@ -140,6 +134,13 @@ in
           white = "#f8f8f2";
           orange = "#ffca80";
         };
+      };
+    };
+    zsh = {
+      enable = true;
+      shellAliases = {
+        PAGER = "bat";
+        cat = "bat";
       };
     };
   };
