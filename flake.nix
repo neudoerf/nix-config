@@ -18,12 +18,6 @@
   outputs = { self, nixpkgs, home-manager, nixgl, ... } @ inputs:
     let
       inherit (self) outputs;
-      systems = [
-        "aarch64-linux"
-        "x86_64-linux"
-        "aarch64-darwin"
-      ];
-      forAllSystems = nixpkgs.lib.genAttrs systems;
     in
     {
       darwinConfigurations.liveware-problem = inputs.darwin.lib.darwinSystem {
