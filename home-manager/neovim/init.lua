@@ -163,6 +163,13 @@ require('lazy').setup({
   { 'sainnhe/everforest' },
 
   {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+
+  {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
@@ -289,7 +296,7 @@ vim.o.relativenumber = true
 
 vim.g.everforest_background = 'medium'
 
-vim.cmd 'colorscheme everforest'
+vim.cmd 'colorscheme tokyonight-storm'
 
 -- Neovide settings
 vim.o.guifont = "IosevkaNeudoerf Nerd Font"
