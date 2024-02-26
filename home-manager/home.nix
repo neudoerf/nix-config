@@ -91,7 +91,7 @@ in
         ];
       };
       settings = {
-        theme = "everforest_dark";
+        theme = "tokyonight_storm";
         editor = {
           cursor-shape = {
             insert = "bar";
