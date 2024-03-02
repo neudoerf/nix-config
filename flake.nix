@@ -20,7 +20,7 @@
       inherit (self) outputs;
     in
     {
-      darwinConfigurations.liveware-problem = inputs.darwin.lib.darwinSystem {
+      darwinConfigurations.nostalgia-for-infinity = inputs.darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         pkgs = import inputs.nixpkgs { system = "aarch64-darwin"; };
         modules = [
