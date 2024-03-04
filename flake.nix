@@ -35,6 +35,9 @@
             nix.extraOptions = ''
               experimental-features = nix-command flakes
             '';
+            services = {
+              nix-daemon.enable = true;
+           };
             system = {
               "stateVersion" = 4;
               defaults = {
@@ -57,7 +60,6 @@
               fontDir.enable = true;
               fonts = [ (pkgs.nerdfonts.override { fonts = [ "FiraCode" "Hack" "Iosevka" "Meslo" ]; }) ];
             };
-            services.nix-daemon.enable = true;
           })
         ];
       };
