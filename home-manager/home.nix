@@ -23,10 +23,12 @@ in
       nixpkgs-fmt
       nnn
       ripgrep
+      wezterm
     ];
   };
 
   xdg.configFile."starship.toml".source = ./starship/neudoerf.toml;
+  xdg.configFile."wezterm/wezterm.lua".source = ./wezterm/wezterm.lua;
 
   programs = {
     alacritty = {
