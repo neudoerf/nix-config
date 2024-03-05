@@ -20,6 +20,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local hostname = vim.fn.systemlist("hostname")[1]
+
 -- [[ Configure plugins ]]
 -- NOTE: Here is where you install your plugins.
 --  You can configure plugins using the `config` key.
@@ -299,7 +301,12 @@ vim.g.everforest_background = 'medium'
 vim.cmd 'colorscheme tokyonight-storm'
 
 -- Neovide settings
-vim.o.guifont = "IosevkaNeudoerf Nerd Font"
+vim.print(hostname)
+if hostname == "CPR02349L" then
+  vim.o.guifont = "IosevkaNeudoerf_Nerd_Font:h12"
+else
+  vim.o.guifont = "IosevkaNeudoerf_Nerd_Font:h14"
+end
 
 vim.g.neovide_scroll_animation_length = 0.1
 vim.g.neovide_cursor_animation_length = 0.1

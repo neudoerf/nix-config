@@ -1,11 +1,18 @@
 local wezterm = require 'wezterm'
 
+local hostname = wezterm.hostname()
+
 local config = {}
 
 config.color_scheme = "Tokyo Night Storm"
-config.default_cursor_style = "BlinkingUnderline"
+config.default_cursor_style = "SteadyUnderline"
 config.font = wezterm.font("IosevkaNeudoerf Nerd Font")
-config.font_size = 14
+if hostname == "CPR02349L" then
+  config.font_size = 12
+  config.default_prog = { 'zsh' }
+else
+  config.font_size = 14
+end
 config.use_fancy_tab_bar = false
 config.window_close_confirmation = 'NeverPrompt'
 config.window_padding = {
