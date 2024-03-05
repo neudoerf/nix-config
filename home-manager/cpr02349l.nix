@@ -16,13 +16,24 @@ let
         sha256 = "sha256:1ljxxdljj76a3vqldzssjg5j45ljazk7ismci4cd5ikyvb89m3b5";
       };
     };
+  wezterm-desktop = pkgs.makeDesktopItem {
+    type = "Application";
+    name = "nixGL Wezterm";
+    desktopName = "nixGL Wezterm";
+    exec = "${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel ${pkgs.wezterm}/bin/wezterm %U";
+    genericName = "Terminal";
+    icon = builtins.fetchurl {
+      url = "https://raw.githubusercontent.com/wez/wezterm/main/assets/icon/wezterm-icon.svg";
+      sha256 = "sha256:06syx1ps2vx1zf5icgl8n238nsm51axw0x145rn8g6pb8ayc3sb9";
+    };
+  };
 in
 {
   home = {
     username = "tneudoerffer";
     homeDirectory = "/home/tneudoerffer";
     packages =
-      [ pkgs.nixgl.nixGLIntel alacritty-desktop pkgs.iosevka-comfy.comfy-fixed pkgs.iosevka-comfy.comfy-duo pkgs.poetry ];
+      [ pkgs.nixgl.nixGLIntel alacritty-desktop wezterm-desktop pkgs.iosevka-comfy.comfy-fixed pkgs.iosevka-comfy.comfy-duo pkgs.poetry ];
   };
 
   programs = {
@@ -47,4 +58,8 @@ in
       };
     };
   };
+
+  xdg.enable = true;
+  xdg.mime.enable = true;
+  targets.genericLinux.enable = true;
 }
