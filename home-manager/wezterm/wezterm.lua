@@ -4,7 +4,6 @@ local config = {}
 
 config.color_scheme = "Tokyo Night Storm"
 config.default_cursor_style = "BlinkingUnderline"
-config.enable_tab_bar = false
 config.font = wezterm.font("IosevkaNeudoerf Nerd Font")
 config.font_size = 14
 config.use_fancy_tab_bar = false
