@@ -33,7 +33,15 @@ in
     username = "tneudoerffer";
     homeDirectory = "/home/tneudoerffer";
     packages =
-      [ pkgs.nixgl.nixGLIntel alacritty-desktop wezterm-desktop pkgs.iosevka-comfy.comfy-fixed pkgs.iosevka-comfy.comfy-duo pkgs.poetry ];
+      [
+        alacritty-desktop
+        wezterm-desktop
+        pkgs.nixgl.nixGLIntel
+        pkgs.iosevka-comfy.comfy-fixed
+        pkgs.iosevka-comfy.comfy-duo
+        pkgs.poetry
+        pkgs.wl-clipboard
+      ];
   };
 
   programs = {
