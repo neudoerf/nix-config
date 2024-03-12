@@ -172,6 +172,10 @@ require('lazy').setup({
   },
 
   {
+    'ellisonleao/gruvbox.nvim'
+  },
+
+  {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
@@ -298,7 +302,7 @@ vim.o.relativenumber = true
 
 vim.g.everforest_background = 'medium'
 
-vim.cmd 'colorscheme tokyonight-storm'
+vim.cmd 'colorscheme everforest'
 
 -- Neovide settings
 if hostname == "CPR02349L" then
