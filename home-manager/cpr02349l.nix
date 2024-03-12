@@ -65,6 +65,7 @@ in
         default_shell = "zsh";
       };
     };
+    zsh.shellAliases.NEOVIDE_FRAME = "none";
   };
 
   xdg.enable = true;
