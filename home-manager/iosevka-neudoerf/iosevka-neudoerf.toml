@@ -1,12 +1,12 @@
-[buildPlans.iosevka-neudoerf]
+[buildPlans.IosevkaNeudoerf]
 family = "Iosevka Neudoerf"
 spacing = "fixed"
 serifs = "sans"
 noCvSs = false
 exportGlyphNames = true
 
-  [buildPlans.iosevka-neudoerf.variants]
+  [buildPlans.IosevkaNeudoerf.variants]
   inherits = "ss07"
 
-    [buildPlans.iosevka-neudoerf.variants.design]
+    [buildPlans.IosevkaNeudoerf.variants.design]
     zero = "slashed"
