@@ -3,7 +3,7 @@
 let
   iosevka-neudoerf = pkgs.iosevka.override {
     privateBuildPlan = builtins.readFile ./iosevka-neudoerf.toml;
-    set = "neudoerf";
+    set = "Neudoerf";
   };
 
   version = "3.1.1";
