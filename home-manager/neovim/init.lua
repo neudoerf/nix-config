@@ -324,6 +324,10 @@ vim.g.neovide_scroll_animation_length = 0.1
 vim.g.neovide_cursor_animation_length = 0.1
 vim.g.neovide_cursor_trail_size = 0.3
 vim.g.neovide_cursor_vfx_mode = "railgun"
+vim.g.neovide_padding_top = 10
+vim.g.neovide_padding_bottom = 10
+vim.g.neovide_padding_right = 10
+vim.g.neovide_padding_left = 10
 
 
 -- [[ Basic Keymaps ]]
