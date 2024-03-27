@@ -9,7 +9,7 @@ config.default_cursor_style = "SteadyUnderline"
 config.font = wezterm.font("IosevkaNeudoerf Nerd Font")
 if hostname == "CPR02349L" then
   config.font_size = 12
-  config.set_environment_variables = { SHELL = "/bin/bash" }
+  config.default_prog = { 'zsh' }
 else
   config.font_size = 14
 end

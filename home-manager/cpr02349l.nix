@@ -60,6 +60,11 @@ in
       };
     };
     git.userEmail = lib.mkForce "tneudoerffer@ottomotors.com";
+    zellij = {
+      settings = {
+        default_shell = "zsh";
+      };
+    };
     zsh.sessionVariables.NEOVIDE_FRAME = "none";
   };
 
