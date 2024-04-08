@@ -66,6 +66,7 @@ in
       };
     };
     zsh.sessionVariables.NEOVIDE_FRAME = "none";
+    zsh.sessionVariables.SHELL = "/bin/bash";
   };
 
   xdg.enable = true;

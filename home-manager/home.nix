@@ -5,6 +5,7 @@ in
 {
   fonts.fontconfig.enable = true;
   home = {
+    file.".tmux.conf".source = ./tmux/tmux.conf;
     stateVersion = "23.11";
     packages = with pkgs; [
       alacritty-theme
@@ -23,6 +24,7 @@ in
       nixpkgs-fmt
       nnn
       ripgrep
+      tmux
       wezterm
     ];
   };
