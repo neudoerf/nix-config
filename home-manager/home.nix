@@ -5,7 +5,6 @@ in
 {
   fonts.fontconfig.enable = true;
   home = {
-    file.".tmux.conf".source = ./tmux/tmux.conf;
     stateVersion = "23.11";
     packages = with pkgs; [
       alacritty-theme
@@ -31,6 +30,7 @@ in
 
   xdg.configFile."starship.toml".source = ./starship/neudoerf.toml;
   xdg.configFile."wezterm/wezterm.lua".source = ./wezterm/wezterm.lua;
+  xdg.configFile."tmux/tmux.conf".source = ./tmux/tmux.conf;
 
   programs = {
     alacritty = {
