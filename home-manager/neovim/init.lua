@@ -168,7 +168,7 @@ require('lazy').setup({
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
-    opts = {},
+    opts = { style = "dark" },
   },
 
   {
@@ -311,7 +311,7 @@ vim.o.relativenumber = true
 
 vim.g.everforest_background = 'medium'
 
-vim.cmd 'colorscheme everforest'
+vim.cmd 'colorscheme tokyonight'
 
 -- Neovide settings
 if hostname == "CPR02349L" then

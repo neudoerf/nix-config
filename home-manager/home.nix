@@ -36,7 +36,7 @@ in
     alacritty = {
       enable = true;
       settings = {
-        import = [ "${pkgs.alacritty-theme}/everforest_dark.toml" ];
+        import = [ "${pkgs.alacritty-theme}/tokyo-night.toml" ];
         font = {
           normal.family = "IosevkaNeudoerf Nerd Font";
           size = 14;
@@ -59,7 +59,7 @@ in
     btop = {
       enable = true;
       settings = {
-        color_theme = "everforest-dark-hard";
+        color_theme = "tokyo-night";
         vim_keys = true;
       };
     };
@@ -95,7 +95,7 @@ in
         ];
       };
       settings = {
-        theme = "everforest_dark";
+        theme = "tokyonight";
         editor = {
           cursor-shape = {
             insert = "bar";
@@ -124,7 +124,7 @@ in
       enable = true;
       settings = {
         pane_frames = false;
-        theme = "everforest-dark";
+        theme = "tokyo-night";
         themes.draculapro = {
           fg = "#f8f8f2";
           bg = "#22212c";

@@ -4,7 +4,7 @@ local hostname = wezterm.hostname()
 
 local config = {}
 
-config.color_scheme = "Everforest Dark (Gogh)"
+config.color_scheme = "Tokyo Night Storm"
 config.default_cursor_style = "SteadyUnderline"
 config.font = wezterm.font("IosevkaNeudoerf Nerd Font")
 if hostname == "CPR02349L" then
