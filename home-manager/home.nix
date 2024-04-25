@@ -73,7 +73,14 @@ in
     };
     git = {
       enable = true;
-      delta.enable = true;
+      delta = {
+        enable = true;
+        options = {
+          dark = true;
+          line-numbers = true;
+          syntax-theme = "Monokai Extended";
+        };
+      };
       userEmail = "tom@neudoerffer.com";
       userName = "Tom Neudoerffer";
     };
