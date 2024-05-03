@@ -81,6 +81,9 @@ in
           syntax-theme = "Monokai Extended";
         };
       };
+      extraConfig = {
+        push.autoSetupRemote = true;
+      };
       userEmail = "tom@neudoerffer.com";
       userName = "Tom Neudoerffer";
     };
