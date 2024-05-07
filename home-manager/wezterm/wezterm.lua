@@ -7,7 +7,7 @@ local config = {}
 config.color_scheme = "Tokyo Night Storm"
 config.default_cursor_style = "SteadyUnderline"
 config.font = wezterm.font("IosevkaNeudoerf Nerd Font")
-if hostname == "CPR02349L" then
+if hostname == "CPR02395L" then
   config.font_size = 12
   config.default_prog = { 'zsh' }
 else

@@ -314,7 +314,7 @@ vim.g.everforest_background = 'medium'
 vim.cmd 'colorscheme tokyonight'
 
 -- Neovide settings
-if hostname == "CPR02349L" then
+if hostname == "CPR02395L" then
   vim.o.guifont = "IosevkaNeudoerf_Nerd_Font:h12"
 else
   vim.o.guifont = "IosevkaNeudoerf_Nerd_Font:h14"

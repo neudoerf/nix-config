@@ -73,7 +73,7 @@
             ./home-manager/nostalgia-for-infinity.nix
           ];
         };
-        "tneudoerffer@CPR02349L" = home-manager.lib.homeManagerConfiguration rec {
+        "tneudoerffer@CPR02395L" = home-manager.lib.homeManagerConfiguration rec {
           # pkgs = nixpkgs.legacyPackages.x86_64-linux;
           pkgs = import nixpkgs {
             system = "x86_64-linux";
@@ -82,7 +82,7 @@
           extraSpecialArgs = { inherit inputs outputs pkgs; };
           modules = [
             ./home-manager/home.nix
-            ./home-manager/cpr02349l.nix
+            ./home-manager/cpr02395l.nix
           ];
         };
       };
