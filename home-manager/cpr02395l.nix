@@ -60,6 +60,7 @@ in
       };
     };
     git.userEmail = lib.mkForce "tneudoerffer@ottomotors.com";
+    obs-studio.enable = true;
     zellij = {
       settings = {
         default_shell = "zsh";
