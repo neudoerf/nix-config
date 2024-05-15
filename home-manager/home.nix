@@ -22,6 +22,7 @@ in
       nix-index
       nixpkgs-fmt
       nnn
+      nodejs
       ripgrep
       tmux
       wezterm
