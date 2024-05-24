@@ -64,6 +64,7 @@ in
         vim_keys = true;
       };
     };
+    emacs.enable = true;
     eza = {
       enable = true;
       enableZshIntegration = true;
