@@ -26,6 +26,8 @@ in
       ripgrep
       tmux
       wezterm
+
+      rustup
     ];
   };
 
@@ -136,7 +138,7 @@ in
       enable = true;
       settings = {
         pane_frames = false;
-        theme = "tokyo-night";
+        theme = "tokyo-night-dark";
         themes.draculapro = {
           fg = "#f8f8f2";
           bg = "#22212c";

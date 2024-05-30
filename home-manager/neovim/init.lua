@@ -168,7 +168,7 @@ require('lazy').setup({
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
-    opts = { style = "dark" },
+    opts = { style = "night" },
   },
 
   {
