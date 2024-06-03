@@ -11,6 +11,7 @@ in
       bat
       curl
       fd
+      glow
       htop
       iosevka-neudoerf
       jq
@@ -23,6 +24,7 @@ in
       nixpkgs-fmt
       nnn
       nodejs
+      pandoc
       ripgrep
       tmux
       wezterm
