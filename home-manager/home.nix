@@ -36,6 +36,7 @@ in
   xdg.configFile."starship.toml".source = ./starship/neudoerf.toml;
   xdg.configFile."wezterm/wezterm.lua".source = ./wezterm/wezterm.lua;
   xdg.configFile."tmux/tmux.conf".source = ./tmux/tmux.conf;
+  xdg.configFile."neovide/config.toml".source = ./neovide/config.toml;
 
   programs = {
     alacritty = {
