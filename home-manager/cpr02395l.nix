@@ -36,6 +36,7 @@ in
       [
         alacritty-desktop
         wezterm-desktop
+        pkgs.cider
         pkgs.nixgl.nixGLIntel
         pkgs.iosevka-comfy.comfy-fixed
         pkgs.iosevka-comfy.comfy-duo
