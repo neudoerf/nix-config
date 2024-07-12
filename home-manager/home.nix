@@ -28,6 +28,7 @@ in
       ripgrep
       tmux
       wezterm
+      zola
 
       rustup
     ];
