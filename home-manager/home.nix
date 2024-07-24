@@ -30,6 +30,9 @@ in
       wezterm
       zola
 
+      gdb
+      openocd
+      qemu
       rustup
     ];
   };
