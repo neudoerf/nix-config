@@ -26,10 +26,11 @@
         modules = [
           ({ pkgs, ... }: {
             users.users.neudoerf.home = "/Users/neudoerf";
+            programs.fish.enable = true;
             programs.zsh.enable = true;
             environment = {
-              shells = [ pkgs.bash pkgs.zsh ];
-              loginShell = pkgs.zsh;
+              shells = [ pkgs.bash pkgs.zsh pkgs.fish ];
+              loginShell = pkgs.fish;
               systemPackages = [ pkgs.coreutils pkgs.rectangle ];
             };
             nix.extraOptions = ''

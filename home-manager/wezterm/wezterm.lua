@@ -9,7 +9,7 @@ config.default_cursor_style = "SteadyUnderline"
 config.font = wezterm.font("IosevkaNeudoerf Nerd Font")
 if hostname == "CPR02395L" then
   config.font_size = 12
-  config.default_prog = { 'zsh' }
+  config.default_prog = { 'fish' }
 else
   config.font_size = 14
 end

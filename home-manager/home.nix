@@ -62,6 +62,7 @@ in
     atuin = {
       enable = true;
       enableZshIntegration = true;
+      enableFishIntegration = true;
       settings = {
         enter_accept = true;
       };
@@ -77,11 +78,17 @@ in
     eza = {
       enable = true;
       enableZshIntegration = true;
+      enableFishIntegration = true;
     };
-    fzf = {
+    fish = {
       enable = true;
-      enableZshIntegration = false;
+      shellAliases = {
+        PAGER = "bat";
+        cat = "bat";
+      };
+      shellInit = "set fish_greeting";
     };
+    fzf.enable = true;
     git = {
       enable = true;
       delta = {
@@ -140,6 +147,7 @@ in
     starship = {
       enable = true;
       enableZshIntegration = true;
+      enableFishIntegration = true;
     };
     zellij = {
       enable = true;

@@ -43,6 +43,10 @@ in
         pkgs.poetry
         pkgs.wl-clipboard
       ];
+    sessionVariables = {
+      NEOVIDE_FRAME = "none";
+      SHELL = "/bin/bash";
+    };
   };
 
   programs = {
@@ -50,7 +54,7 @@ in
       settings = {
         env.TERM = "xterm-256color";
         font.size = lib.mkForce 12;
-        shell = "zsh";
+        shell = "fish";
         window = lib.mkForce {
           decorations = "None";
           padding = {
@@ -63,11 +67,9 @@ in
     git.userEmail = lib.mkForce "tneudoerffer@ottomotors.com";
     zellij = {
       settings = {
-        default_shell = "zsh";
+        default_shell = "fish";
       };
     };
-    zsh.sessionVariables.NEOVIDE_FRAME = "none";
-    zsh.sessionVariables.SHELL = "/bin/bash";
   };
 
   xdg.enable = true;
