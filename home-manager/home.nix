@@ -30,7 +30,7 @@ in
       wezterm
       zola
 
-      gdb
+      lldb
       openocd
       qemu
       rustup
