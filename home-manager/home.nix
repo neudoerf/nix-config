@@ -101,6 +101,7 @@ in
       };
       extraConfig = {
         push.autoSetupRemote = true;
+        init.defaultBranch = "main";
       };
       userEmail = "tom@neudoerffer.com";
       userName = "Tom Neudoerffer";
