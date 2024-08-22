@@ -58,8 +58,7 @@
               };
             };
             fonts = {
-              fontDir.enable = true;
-              fonts = [ (pkgs.nerdfonts.override { fonts = [ "FiraCode" "Hack" "Iosevka" "Meslo" ]; }) ];
+              packages = [ (pkgs.nerdfonts.override { fonts = [ "FiraCode" "Hack" "Iosevka" "Meslo" ]; }) ];
             };
           })
         ];
