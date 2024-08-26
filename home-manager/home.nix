@@ -32,6 +32,7 @@ in
 
       lldb
       openocd
+      probe-rs-tools
       qemu
       rustup
     ];
