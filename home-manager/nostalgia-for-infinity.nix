@@ -11,6 +11,9 @@
         p.sympy
       ]))
     ];
+    sessionPath = [
+      "/Users/neudoerf/.cargo/bin"
+    ];
     sessionVariables = {
       NEOVIDE_FRAME = "buttonless";
     };

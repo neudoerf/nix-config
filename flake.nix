@@ -25,7 +25,6 @@
         pkgs = import inputs.nixpkgs { system = "aarch64-darwin"; };
         modules = [
           ({ pkgs, ... }: {
-            users.users.neudoerf.home = "/Users/neudoerf";
             programs.fish.enable = true;
             programs.zsh.enable = true;
             environment = {
@@ -38,7 +37,7 @@
             '';
             services = {
               nix-daemon.enable = true;
-           };
+            };
             system = {
               "stateVersion" = 4;
               defaults = {
@@ -56,6 +55,10 @@
                 enableKeyMapping = true;
                 remapCapsLockToControl = true;
               };
+            };
+            users.users.neudoerf = {
+              home = "/Users/neudoerf";
+              shell = pkgs.fish;
             };
             fonts = {
               packages = [ (pkgs.nerdfonts.override { fonts = [ "FiraCode" "Hack" "Iosevka" "Meslo" ]; }) ];
