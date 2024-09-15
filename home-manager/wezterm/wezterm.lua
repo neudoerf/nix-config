@@ -8,6 +8,8 @@ local config = {}
 config.color_scheme = "Tokyo Night"
 config.default_cursor_style = "SteadyUnderline"
 config.font = wezterm.font("IosevkaNeudoerf Nerd Font")
+-- fix font rendering issue (should be temporary, added 20240915)
+config.front_end = "WebGpu"
 if hostname == "CPR02395L" then
   config.font_size = 12
   config.default_prog = { 'fish' }
