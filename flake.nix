@@ -9,13 +9,18 @@
     darwin.url = "github:lnl7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixgl = {
-      url = "github:guibou/nixGL";
+    system-manager = {
+      url = "github:numtide/system-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-system-graphics = {
+      url = "github:soupglasses/nix-system-graphics";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixgl, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, system-manager, nix-system-graphics, ... } @ inputs:
     let
       inherit (self) outputs;
     in
@@ -67,6 +72,19 @@
         ];
       };
 
+      systemConfigs.CPR02395L = system-manager.lib.makeSystemConfig {
+        modules = [
+          nix-system-graphics.systemModules.default
+          ({
+            config = {
+              nixpkgs.hostPlatform = "x86_64-linux";
+              system-manager.allowAnyDistro = true;
+              system-graphics.enable = true;
+            };
+          })
+        ];
+      };
+
       homeConfigurations = {
         "neudoerf@nostalgia-for-infinity" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.aarch64-darwin;
@@ -80,7 +98,6 @@
           # pkgs = nixpkgs.legacyPackages.x86_64-linux;
           pkgs = import nixpkgs {
             system = "x86_64-linux";
-            overlays = [ nixgl.overlay ];
           };
           extraSpecialArgs = { inherit inputs outputs pkgs; };
           modules = [
