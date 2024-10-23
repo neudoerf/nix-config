@@ -15,6 +15,7 @@ in
       htop
       iosevka-neudoerf
       jq
+      lazygit
       less
       lf
       marksman
