@@ -1,6 +1,9 @@
 { pkgs, ... }:
 let
-  iosevka-neudoerf = pkgs.callPackage ./iosevka-neudoerf { };
+  iosevka-neudoerf = pkgs.iosevka.override {
+    privateBuildPlan = builtins.readFile ./iosevka-neudoerf/iosevka-neudoerf.toml;
+    set = "Neudoerf";
+  };
 in
 {
   fonts.fontconfig.enable = true;

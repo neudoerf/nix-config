@@ -327,9 +327,9 @@ vim.cmd 'colorscheme tokyonight'
 
 -- Neovide settings
 if hostname == "CPR02395L" then
-  vim.o.guifont = "IosevkaNeudoerf_Nerd_Font:h12"
+  vim.o.guifont = "Iosevka_Neudoerf:h12"
 else
-  vim.o.guifont = "IosevkaNeudoerf_Nerd_Font:h14"
+  vim.o.guifont = "Iosevka_Neudoerf:h14"
 end
 
 vim.g.neovide_scroll_animation_length = 0.1

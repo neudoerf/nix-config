@@ -7,7 +7,7 @@ local config = {}
 -- colors and fonts
 config.color_scheme = "Tokyo Night"
 config.default_cursor_style = "SteadyUnderline"
-config.font = wezterm.font("IosevkaNeudoerf Nerd Font")
+config.font = wezterm.font("Iosevka Neudoerf")
 -- fix font rendering issue (should be temporary, added 20240915)
 config.front_end = "WebGpu"
 if hostname == "CPR02395L" then
@@ -20,7 +20,7 @@ end
 -- window
 config.window_decorations = "RESIZE"
 config.window_frame = {
-  font = wezterm.font({ family = "IosevkaNeudoerf Nerd Font", weight = "Bold" })
+  font = wezterm.font({ family = "Iosevka Neudoerf", weight = "Bold" })
 }
 config.window_padding = {
   left = 10,
