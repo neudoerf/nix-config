@@ -39,6 +39,7 @@ in
       probe-rs-tools
       qemu
       rustup
+      shellcheck
     ];
   };
 
