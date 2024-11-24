@@ -6,7 +6,14 @@ noCvSs = false
 exportGlyphNames = true
 
   [buildPlans.IosevkaNeudoerf.variants]
-  inherits = "ss07"
+  inherits = "ss05"
 
     [buildPlans.IosevkaNeudoerf.variants.design]
     zero = "slashed"
+    a = "double-storey-tailed"
+    d = "tailed-serifed"
+    k = "cursive-top-left-serifed"
+    m = "serifless"
+    p = "eared-motion-serifed"
+    q = "straight-motion-serifed"
+    y = "cursive-flat-hook-serifless"
