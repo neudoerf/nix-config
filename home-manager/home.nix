@@ -16,7 +16,6 @@ in
       fd
       glow
       htop
-      iosevka-neudoerf
       jq
       lazygit
       less
@@ -34,6 +33,11 @@ in
       wezterm
       zola
 
+      # fonts
+      iosevka-neudoerf
+      nerdfonts
+
+      # dev
       lldb
       openocd
       probe-rs-tools
