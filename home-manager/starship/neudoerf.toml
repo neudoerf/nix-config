@@ -1,26 +1,16 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[ ](bg:red)\
-$os\
-$username\
-[](fg:red bg:yellow)\
-$hostname\
-[](fg:yellow bg:green)\
+$username@$hostname\
 $directory\
-[](fg:green bg:cyan)\
-$git_branch\
-$git_status\
-[](fg:cyan bg:blue)\
+$git_branch$git_status\
 $nix_shell\
-[](fg:blue bg:purple)\
 $time\
-[ ](fg:purple)\
 $line_break$character """
 
 [os]
 disabled = false
-style = "bg:red fg:black"
+style = "fg:red"
 
 [os.symbols]
 Windows = "󰍲"
@@ -45,17 +35,17 @@ RedHatEnterprise = "󱄛"
 
 [username]
 show_always = true
-style_user = "bg:red fg:black"
-style_root = "bg:red fg:black"
-format = '[ $user ]($style)'
+style_user = "fg:red"
+style_root = "fg:red"
+format = '[$user]($style)'
 
 [hostname]
 ssh_only = false
-format = '[ $hostname ](bg:yellow fg:black)'
+format = '[$hostname ](fg:yellow)'
 
 [directory]
-style = "fg:black bg:green"
-format = "[ $path ]($style)"
+style = "fg:green"
+format = "[$path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
@@ -67,24 +57,24 @@ truncation_symbol = "…/"
 "Developer" = "󰲋 "
 
 [git_branch]
-symbol = ""
-style = "bg:cyan"
-format = '[[ $symbol $branch ](fg:black bg:cyan)]($style)'
+symbol = " "
+style = "fg:cyan"
+format = '[$symbol $branch ]($style)'
 
 [git_status]
-style = "bg:cyan"
-format = '[[($all_status$ahead_behind )](fg:black bg:cyan)]($style)'
+style = "fg:cyan"
+format = '[($all_status$ahead_behind )]($style)'
 
 [nix_shell]
-style = "bg:blue fg:black"
-format = "[ $symbol$state ]($style)"
+style = "fg:blue"
+format = "[$symbol$state ]($style)"
 symbol = " "
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:purple"
-format = '[[   $time ](fg:black bg:purple)]($style)'
+style = "fg:purple"
+format = '[  $time ]($style)'
 
 [line_break]
 disabled = false

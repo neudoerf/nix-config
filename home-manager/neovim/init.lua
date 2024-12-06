@@ -184,6 +184,12 @@ require('lazy').setup({
   },
 
   {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+  },
+
+  {
     'ellisonleao/gruvbox.nvim'
   },
 
@@ -570,7 +576,7 @@ local on_attach = function(_, bufnr)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
 
-  vim.lsp.inlay_hint.enable(true, {0})
+  vim.lsp.inlay_hint.enable(true, { 0 })
 end
 
 -- document existing key chains

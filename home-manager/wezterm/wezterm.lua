@@ -5,7 +5,7 @@ local hostname = wezterm.hostname()
 local config = {}
 
 -- colors and fonts
-config.color_scheme = "Tokyo Night"
+config.color_scheme = "Catppuccin Mocha"
 config.default_cursor_style = "SteadyUnderline"
 config.font = wezterm.font("Iosevka Neudoerf")
 -- fix font rendering issue (should be temporary, added 20240915)
