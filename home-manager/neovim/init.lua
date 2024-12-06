@@ -329,7 +329,7 @@ vim.o.relativenumber = true
 
 vim.g.everforest_background = 'medium'
 
-vim.cmd 'colorscheme tokyonight'
+vim.cmd 'colorscheme catppuccin'
 
 -- Neovide settings
 if hostname == "CPR02395L" then

@@ -35,7 +35,10 @@ in
 
       # fonts
       iosevka-neudoerf
-      nerdfonts
+      nerd-fonts.caskaydia-mono
+      nerd-fonts.iosevka
+      nerd-fonts.monaspace
+      nerd-fonts.zed-mono
 
       # dev
       lldb
