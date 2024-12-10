@@ -21,7 +21,6 @@ in
       less
       lf
       marksman
-      neovide
       nil
       nix-index
       nixpkgs-fmt
@@ -53,7 +52,6 @@ in
   xdg.configFile."starship.toml".source = ./starship/neudoerf.toml;
   xdg.configFile."wezterm/wezterm.lua".source = ./wezterm/wezterm.lua;
   xdg.configFile."tmux/tmux.conf".source = ./tmux/tmux.conf;
-  xdg.configFile."neovide/config.toml".source = ./neovide/config.toml;
 
   programs = {
     alacritty = {
@@ -153,6 +151,10 @@ in
       };
     };
     home-manager.enable = true;
+    neovide = {
+      enable = true;
+      settings = { fork = true; };
+    };
     neovim = {
       enable = true;
       defaultEditor = true;
