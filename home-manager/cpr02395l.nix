@@ -3,14 +3,14 @@
   home = {
     username = "tneudoerffer";
     homeDirectory = "/home/tneudoerffer";
-    packages =
-      [
-        pkgs.cider
-        pkgs.iosevka-comfy.comfy-fixed
-        pkgs.iosevka-comfy.comfy-duo
-        pkgs.poetry
-        pkgs.wl-clipboard
-      ];
+    packages = with pkgs; [
+      cider
+      iosevka-comfy.comfy-fixed
+      iosevka-comfy.comfy-duo
+      obsidian
+      poetry
+      wl-clipboard
+    ];
     sessionVariables = {
       NEOVIDE_FRAME = "none";
       SHELL = "/bin/bash";
