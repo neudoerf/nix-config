@@ -90,7 +90,8 @@
           pkgs = nixpkgs.legacyPackages.aarch64-darwin;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
-            ./home-manager/home.nix
+            ./home-manager/home-cli.nix
+            ./home-manager/home-graphical.nix
             ./home-manager/nostalgia-for-infinity.nix
           ];
         };
@@ -102,7 +103,8 @@
           };
           extraSpecialArgs = { inherit inputs outputs pkgs; };
           modules = [
-            ./home-manager/home.nix
+            ./home-manager/home-cli.nix
+            ./home-manager/home-graphical.nix
             ./home-manager/cpr02395l.nix
           ];
         };
