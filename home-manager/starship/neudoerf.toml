@@ -1,7 +1,8 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-$username@$hostname\
+$username\
+$hostname\
 $directory\
 $git_branch$git_status\
 $nix_shell\
@@ -37,15 +38,15 @@ RedHatEnterprise = "󱄛"
 show_always = true
 style_user = "fg:red"
 style_root = "fg:red"
-format = '[$user]($style)'
+format = '[$user ]($style)'
 
 [hostname]
 ssh_only = false
-format = '[$hostname ](fg:yellow)'
+format = '// [$hostname ](fg:yellow)'
 
 [directory]
 style = "fg:green"
-format = "[$path ]($style)"
+format = "// [$path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
@@ -59,7 +60,7 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = " "
 style = "fg:cyan"
-format = '[$symbol $branch ]($style)'
+format = '// [$symbol $branch ]($style)'
 
 [git_status]
 style = "fg:cyan"
@@ -67,14 +68,14 @@ format = '[($all_status$ahead_behind )]($style)'
 
 [nix_shell]
 style = "fg:blue"
-format = "[$symbol$state ]($style)"
+format = "// [$symbol $state ]($style)"
 symbol = " "
 
 [time]
 disabled = false
 time_format = "%R"
 style = "fg:purple"
-format = '[  $time ]($style)'
+format = '// [  $time ]($style)'
 
 [line_break]
 disabled = false
