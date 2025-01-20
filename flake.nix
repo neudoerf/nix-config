@@ -49,6 +49,24 @@
           }
         ];
       };
+      stargate = nixpkgs.lib.nixosSystem {
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+        };
+        system = "x86_64-linux";
+        modules = [
+          ./stargate/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.neudoerf = import ./home-manager/home-cli.nix;
+            };
+          }
+        ];
+      };
     };
     darwinConfigurations.nostalgia-for-infinity = inputs.darwin.lib.darwinSystem {
       system = "aarch64-darwin";
