@@ -1,41 +1,48 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   home = {
     stateVersion = "23.11";
-    packages = with pkgs; [
-      bat
-      curl
-      fd
-      glow
-      htop
-      jq
-      lazygit
-      less
-      lf
-      marksman
-      nil
-      nix-index
-      nixpkgs-fmt
-      nnn
-      nodejs
-      pandoc
-      ripgrep
-      tmux
-      zola
+    packages =
+      with pkgs;
+      [
+        bat
+        curl
+        fd
+        glow
+        htop
+        jq
+        lazygit
+        less
+        lf
+        marksman
+        nil
+        nix-index
+        nixpkgs-fmt
+        nnn
+        nodejs
+        pandoc
+        ripgrep
+        tmux
+        zola
 
-      # dev
-      lldb
-      openocd
-      probe-rs-tools
-      qemu
-      rustup
-      shellcheck
-    ];
+        # dev
+        lldb
+        openocd
+        probe-rs-tools
+        qemu
+        rustup
+        shellcheck
+      ]
+      ++ [ inputs.nvf-config.packages.${pkgs.system}.default ];
   };
 
-  xdg.configFile."starship.toml".source = ./starship/neudoerf.toml;
-  xdg.configFile."wezterm/wezterm.lua".source = ./wezterm/wezterm.lua;
-  xdg.configFile."tmux/tmux.conf".source = ./tmux/tmux.conf;
+  xdg = {
+    configFile = {
+      "starship.toml".source = ./starship/neudoerf.toml;
+      "wezterm/wezterm.lua".source = ./wezterm/wezterm.lua;
+      "tmux/tmux.conf".source = ./tmux/tmux.conf;
+    };
+  };
 
   programs = {
     atuin = {

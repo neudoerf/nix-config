@@ -18,6 +18,11 @@
       url = "github:soupglasses/nix-system-graphics";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nvf-config = {
+      url = "github:neudoerf/nvf-config";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -144,7 +149,7 @@
           system = "x86_64-linux";
           config.allowUnfree = true;
         };
-        extraSpecialArgs = {inherit inputs outputs pkgs;};
+        extraSpecialArgs = {inherit inputs outputs pkgs ;};
         modules = [
           ./home-manager/home-cli.nix
           ./home-manager/home-graphical.nix
