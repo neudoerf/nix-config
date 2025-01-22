@@ -1,7 +1,8 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -16,20 +17,17 @@
   };
 
   networking = {
-    hostName = "stargate";
+    hostName = "galactica";
     networkmanager.enable = true;
-    firewall.allowedTCPPorts = [80 443];
+    firewall.allowedTCPPorts = [
+      80
+      443
+    ];
   };
 
   time.timeZone = "America/Toronto";
 
   i18n.defaultLocale = "en_CA.UTF-8";
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 
   programs.fish.enable = true;
 
@@ -37,13 +35,19 @@
   users.users.neudoerf = {
     isNormalUser = true;
     description = "Tom Neudoerffer";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     # packages = with pkgs; [];
     shell = pkgs.fish;
   };
 
   # List packages installed in system profile. To search, run:
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   environment.systemPackages = with pkgs; [
     git
     vim
@@ -60,12 +64,12 @@
 
   # List services that you want to enable:
   virtualisation.containers.enable = true;
+  services = {
+    openssh.enable = true;
+    qemuGuest.enable = true;
+  };
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  security.sudo.wheelNeedsPassword = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

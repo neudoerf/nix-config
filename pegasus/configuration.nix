@@ -17,7 +17,7 @@
   };
 
   networking = {
-    hostName = "ringspace";
+    hostName = "pegasus";
     networkmanager.enable = true;
     firewall.allowedTCPPorts = [
       80
@@ -28,6 +28,12 @@
   time.timeZone = "America/Toronto";
 
   i18n.defaultLocale = "en_CA.UTF-8";
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
 
   programs.fish.enable = true;
 
@@ -64,12 +70,12 @@
 
   # List services that you want to enable:
   virtualisation.containers.enable = true;
-  services = {
-    openssh.enable = true;
-    qemuGuest.enable = true;
-  };
 
-  security.sudo.wheelNeedsPassword = false;
+  # Enable the OpenSSH daemon.
+  services.openssh.enable = true;
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

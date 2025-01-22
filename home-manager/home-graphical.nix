@@ -11,7 +11,7 @@ in
     stateVersion = "23.11";
     packages = with pkgs; [
       alacritty-theme
-      ghostty
+      # ghostty
       wezterm
 
       # fonts
