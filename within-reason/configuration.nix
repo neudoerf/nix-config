@@ -17,7 +17,7 @@
   };
 
   networking = {
-    hostName = "pegasus";
+    hostName = "within-reason";
     networkmanager.enable = true;
     firewall.allowedTCPPorts = [
       80

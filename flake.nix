@@ -39,14 +39,14 @@
     in
     {
       nixosConfigurations = {
-        galactica = nixpkgs.lib.nixosSystem {
+        appeal-to-reason = nixpkgs.lib.nixosSystem {
           pkgs = import nixpkgs {
             system = "x86_64-linux";
             config.allowUnfree = true;
           };
           system = "x86_64-linux";
           modules = [
-            ./galactica/configuration.nix
+            ./appeal-to-reason/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager = {
@@ -58,14 +58,14 @@
             }
           ];
         };
-        pegasus = nixpkgs.lib.nixosSystem {
+        within-reason = nixpkgs.lib.nixosSystem {
           pkgs = import nixpkgs {
             system = "x86_64-linux";
             config.allowUnfree = true;
           };
           system = "x86_64-linux";
           modules = [
-            ./pegasus/configuration.nix
+            ./within-reason/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager = {

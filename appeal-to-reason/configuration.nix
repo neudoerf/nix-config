@@ -17,7 +17,7 @@
   };
 
   networking = {
-    hostName = "galactica";
+    hostName = "appeal-to-reason";
     networkmanager.enable = true;
     firewall.allowedTCPPorts = [
       80
