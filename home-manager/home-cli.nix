@@ -7,6 +7,7 @@
       [
         bat
         curl
+        dust
         fd
         glow
         htop
