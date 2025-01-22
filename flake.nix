@@ -93,7 +93,6 @@
                   pkgs.zsh
                   pkgs.fish
                 ];
-                loginShell = pkgs.fish;
                 systemPackages = [
                   pkgs.coreutils
                   pkgs.rectangle
@@ -129,14 +128,9 @@
               };
               fonts = {
                 packages = [
-                  (pkgs.nerdfonts.override {
-                    fonts = [
-                      "FiraCode"
-                      "Hack"
-                      "Iosevka"
-                      "Meslo"
-                    ];
-                  })
+                  pkgs.nerd-fonts.fira-code
+                  pkgs.nerd-fonts.hack
+                  pkgs.nerd-fonts.iosevka
                 ];
               };
             }
