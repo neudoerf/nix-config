@@ -384,11 +384,11 @@
         "nvf": "nvf"
       },
       "locked": {
-        "lastModified": 1737483365,
-        "narHash": "sha256-ML5LDpAA7oW1g0pjzW/ZolfYXZZBM/dIEh+9LITjzhw=",
+        "lastModified": 1737513246,
+        "narHash": "sha256-K9UM1DmMsxyUxeQpMMB549SxoclUbFIhqGf9MPt0Kr8=",
         "owner": "neudoerf",
         "repo": "nvf-config",
-        "rev": "2b3753dd6c38ce412b7633bb71eb286e55833f6c",
+        "rev": "e5af449d2155229e9300f569a61d7707f3f314e0",
         "type": "github"
       },
       "original": {
