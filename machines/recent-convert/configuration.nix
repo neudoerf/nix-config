@@ -6,9 +6,9 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./../defaults/vm.nix
-    ./../services/homepage.nix
-    ./../services/freshrss.nix
+    ./../../defaults/vm.nix
+    ./../../services/homepage.nix
+    ./../../services/freshrss.nix
   ];
 
   networking = {

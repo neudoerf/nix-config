@@ -2,8 +2,8 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./../defaults/vm.nix
-    ./../services/caddy.nix
+    ./../../defaults/vm.nix
+    ./../../services/caddy.nix
   ];
 
   networking = {
