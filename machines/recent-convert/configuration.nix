@@ -9,11 +9,19 @@
     ./../../defaults/vm.nix
     ./../../services/homepage.nix
     ./../../services/freshrss.nix
+    ./../../services/factorio-server.nix
   ];
 
   networking = {
     hostName = "recent-convert";
     networkmanager.enable = true;
+    firewall.enable = false;
+    # firewall.allowedUDPPorts = [
+    #   34197 # factorio
+    # ];
+    # firewall.allowedTCPPorts = [
+    #   27015 # factorio
+    # ];
   };
 
 
