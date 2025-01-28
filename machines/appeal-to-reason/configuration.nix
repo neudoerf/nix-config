@@ -8,6 +8,7 @@
     ./hardware-configuration.nix
     ./../../defaults/vm.nix
     ./../../services/caddy.nix
+    ./../../services/ddclient.nix
   ];
 
   networking = {
