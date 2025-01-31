@@ -26,11 +26,19 @@
     shell = pkgs.fish;
   };
 
-  # List packages installed in system profile. To search, run:
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix = {
+    settings = {
+      # List packages installed in system profile. To search, run:
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+
+      trusted-public-keys = [
+        "size-isnt-everything:VqlkSjMoUZsoudCjK3Lz3mtaPoI3YIoKmGbKLDVaEWg="
+      ];
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     git
