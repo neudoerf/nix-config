@@ -23,6 +23,11 @@
       url = "github:neudoerf/nvf-config";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    deploy-rs = {
+      url = "github:serokell/deploy-rs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -114,6 +119,67 @@
               };
             }
           ];
+        };
+        size-isnt-everything = nixpkgs.lib.nixosSystem {
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+          system = "x86_64-linux";
+          modules = [
+            ./machines/size-isnt-everything/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                extraSpecialArgs = { inherit inputs; };
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.neudoerf = import ./home-manager/home-cli.nix;
+              };
+            }
+          ];
+        };
+      };
+      deploy.nodes = {
+        appeal-to-reason = {
+          hostname = "appeal-to-reason.neunet.ca";
+          fastConnection = true;
+          profiles.system = {
+            user = "root";
+            path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.appeal-to-reason;
+          };
+        };
+        long-view = {
+          hostname = "long-view.neunet.ca";
+          fastConnection = true;
+          profiles.system = {
+            user = "root";
+            path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.long-view;
+          };
+        };
+        within-reason = {
+          hostname = "within-reason.neunet.ca";
+          fastConnection = true;
+          profiles.system = {
+            user = "root";
+            path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.within-reason;
+          };
+        };
+        recent-convert = {
+          hostname = "recent-convert.neunet.ca";
+          fastConnection = true;
+          profiles.system = {
+            user = "root";
+            path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.recent-convert;
+          };
+        };
+        size-isnt-everything = {
+          hostname = "size-isnt-everything.neunet.ca";
+          fastConnection = true;
+          profiles.system = {
+            user = "root";
+            path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.size-isnt-everything;
+          };
         };
       };
       darwinConfigurations.nostalgia-for-infinity = inputs.darwin.lib.darwinSystem {
