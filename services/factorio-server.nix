@@ -2,7 +2,7 @@
 {
   virtualisation.oci-containers.containers = {
     factorio-server = {
-      image = "factoriotools/factorio";
+      image = "factoriotools/factorio:stable";
       extraOptions = [ "--pull=always" ];
       autoStart = true;
       volumes = [
