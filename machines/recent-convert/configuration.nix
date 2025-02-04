@@ -8,8 +8,9 @@
     ./hardware-configuration.nix
     ./../../defaults/vm.nix
     ./../../services/homepage.nix
-    ./../../services/freshrss.nix
     ./../../services/factorio-server.nix
+    ./../../services/forgejo.nix
+    ./../../services/freshrss.nix
   ];
 
   networking = {
