@@ -139,6 +139,25 @@
             }
           ];
         };
+        space-monster = nixpkgs.lib.nixosSystem {
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+          system = "x86_64-linux";
+          modules = [
+            ./machines/space-monster/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                extraSpecialArgs = { inherit inputs; };
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.neudoerf = import ./home-manager/home-cli.nix;
+              };
+            }
+          ];
+        };
       };
       deploy.nodes = {
         appeal-to-reason = {
@@ -179,6 +198,14 @@
           profiles.system = {
             user = "root";
             path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.size-isnt-everything;
+          };
+        };
+        space-monster = {
+          hostname = "10.1.50.20";
+          fastConnection = true;
+          profiles.system = {
+            user = "root";
+            path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.space-monster;
           };
         };
       };
