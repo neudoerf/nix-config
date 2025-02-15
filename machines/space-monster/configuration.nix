@@ -7,7 +7,7 @@
   ];
 
   networking = {
-    hostName = "within-reason";
+    hostName = "space-monster";
     networkmanager.enable = true;
     firewall.allowedTCPPorts = [
       27015
