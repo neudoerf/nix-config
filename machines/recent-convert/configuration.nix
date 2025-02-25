@@ -11,6 +11,7 @@
     ./../../services/factorio-server.nix
     ./../../services/forgejo.nix
     ./../../services/freshrss.nix
+    ./../../services/mealie.nix
   ];
 
   networking = {
