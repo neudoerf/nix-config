@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ./../../defaults/vm.nix
     ./../../services/factorio-server.nix
+    ./../../services/conduwuit.nix
   ];
 
   networking = {

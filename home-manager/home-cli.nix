@@ -136,26 +136,6 @@
       enableZshIntegration = true;
       enableFishIntegration = true;
     };
-    zellij = {
-      enable = true;
-      settings = {
-        pane_frames = false;
-        theme = "tokyo-night-dark";
-        themes.draculapro = {
-          fg = "#f8f8f2";
-          bg = "#22212c";
-          black = "#7970a9";
-          red = "#ff9580";
-          green = "#8aff80";
-          yellow = "#ffff80";
-          blue = "#9580ff";
-          magenta = "#ff80bf";
-          cyan = "#80ffea";
-          white = "#f8f8f2";
-          orange = "#ffca80";
-        };
-      };
-    };
     zsh = {
       enable = true;
       shellAliases = {

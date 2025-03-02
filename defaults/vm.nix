@@ -34,6 +34,8 @@
         "flakes"
       ];
 
+      min-free = 5368709120;
+
       trusted-public-keys = [
         "size-isnt-everything:VqlkSjMoUZsoudCjK3Lz3mtaPoI3YIoKmGbKLDVaEWg="
       ];
