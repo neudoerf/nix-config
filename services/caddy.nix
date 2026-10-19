@@ -11,7 +11,7 @@
         "/volumes/caddy/data:/data"
         "/volumes/caddy/config:/config"
       ];
-      environmentFiles = [ /volumes/caddy/.env ];
+      environmentFiles = [ "/volumes/caddy/.env" ];
       ports = [
         "80:80"
         "443:443"

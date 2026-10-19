@@ -18,7 +18,7 @@ else
 end
 
 -- window
-config.window_decorations = "RESIZE"
+-- config.window_decorations = "RESIZE"
 config.window_frame = {
   font = wezterm.font({ family = "Iosevka Neudoerf", weight = "Bold" })
 }

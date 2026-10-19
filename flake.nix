@@ -19,10 +19,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nvf-config = {
-      url = "github:neudoerf/nvf-config";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # nvf-config = {
+    #   url = "github:neudoerf/nvf-config";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     deploy-rs = {
       url = "github:serokell/deploy-rs";
@@ -232,10 +232,8 @@
               nix.extraOptions = ''
                 experimental-features = nix-command flakes
               '';
-              services = {
-                nix-daemon.enable = true;
-              };
               system = {
+                primaryUser = "neudoerf";
                 "stateVersion" = 4;
                 defaults = {
                   finder.AppleShowAllExtensions = true;

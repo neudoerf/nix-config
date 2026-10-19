@@ -9,7 +9,7 @@
       volumes = [
         "/volumes/ddclient/config:/config"
       ];
-      environmentFiles = [ /volumes/ddclient/.env ];
+      environmentFiles = [ "/volumes/ddclient/.env" ];
       ports = [ ];
     };
   };

@@ -5,7 +5,6 @@
     packages = [
       pkgs.poetry
       (pkgs.python312.withPackages (p: [
-        p.filterpy
         p.jupyter
         p.scipy
         p.sympy

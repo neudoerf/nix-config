@@ -11,7 +11,7 @@
       volumes = [
         "/volumes/mealie/data:/app/data"
       ];
-      environmentFiles = [ /volumes/mealie/.env ];
+      environmentFiles = [ "/volumes/mealie/.env" ];
       ports = [
         "9925:9000"
       ];

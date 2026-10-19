@@ -33,14 +33,12 @@
         qemu
         rustup
         shellcheck
-      ]
-      ++ [ inputs.nvf-config.packages.${pkgs.system}.default ];
+      ];
+      # ++ [ inputs.nvf-config.packages.${pkgs.system}.default ];
   };
 
   xdg = {
     configFile = {
-      "starship.toml".source = ./starship/neudoerf.toml;
-      "wezterm/wezterm.lua".source = ./wezterm/wezterm.lua;
       "tmux/tmux.conf".source = ./tmux/tmux.conf;
     };
   };
@@ -75,22 +73,25 @@
       shellInit = "set fish_greeting";
     };
     fzf.enable = true;
+    delta = {
+      enable = true;
+      enableGitIntegration = true;
+      options = {
+        dark = true;
+        line-numbers = true;
+        syntax-theme = "Monokai Extended";
+      };
+    };
     git = {
       enable = true;
-      delta = {
-        enable = true;
-        options = {
-          dark = true;
-          line-numbers = true;
-          syntax-theme = "Monokai Extended";
-        };
-      };
-      extraConfig = {
+      settings = {
         push.autoSetupRemote = true;
         init.defaultBranch = "main";
+        user = {
+          email = "tom@neudoerffer.com";
+          name = "Tom Neudoerffer";
+        };
       };
-      userEmail = "tom@neudoerffer.com";
-      userName = "Tom Neudoerffer";
     };
     helix = {
       enable = true;
@@ -129,7 +130,7 @@
     neovim = {
       enable = true;
       defaultEditor = true;
-      extraLuaConfig = pkgs.lib.readFile ./neovim/init.lua;
+      # extraLuaConfig = pkgs.lib.readFile ./neovim/init.lua;
     };
     starship = {
       enable = true;

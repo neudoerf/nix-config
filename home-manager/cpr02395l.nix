@@ -4,7 +4,6 @@
     username = "tneudoerffer";
     homeDirectory = "/home/tneudoerffer";
     packages = with pkgs; [
-      cider
       iosevka-comfy.comfy-fixed
       iosevka-comfy.comfy-duo
       obsidian
@@ -14,6 +13,7 @@
     sessionVariables = {
       NEOVIDE_FRAME = "none";
       SHELL = "/bin/bash";
+      TERM = "xterm-256color";
     };
   };
 
@@ -32,7 +32,7 @@
         };
       };
     };
-    git.userEmail = lib.mkForce "tneudoerffer@ottomotors.com";
+    git.settings.user.email = lib.mkForce "tneudoerffer@ottomotors.com";
     zellij = {
       settings = {
         default_shell = "fish";

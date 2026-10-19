@@ -13,6 +13,7 @@ in
       alacritty-theme
       # ghostty
       wezterm
+      neovide
 
       # fonts
       iosevka-neudoerf
@@ -39,10 +40,6 @@ in
         };
         cursor.style.shape = "Underline";
       };
-    };
-    neovide = {
-      enable = true;
-      settings = { fork = true; };
     };
   };
 }

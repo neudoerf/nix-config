@@ -8,7 +8,7 @@
       volumes = [
         "/volumes/freshrss/data:/var/www/FreshRSS/data"
       ];
-      environmentFiles = [ /volumes/freshrss/.env ];
+      environmentFiles = [ "/volumes/freshrss/.env" ];
       ports = [
         "8080:80"
       ];
