@@ -6,6 +6,12 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    # NixOS servers track stable; desktops/darwin/home profiles track unstable
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
+
+    home-manager-stable.url = "github:nix-community/home-manager/release-26.05";
+    home-manager-stable.inputs.nixpkgs.follows = "nixpkgs-stable";
+
     darwin.url = "github:lnl7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -34,181 +40,55 @@
     {
       self,
       nixpkgs,
+      nixpkgs-stable,
       home-manager,
+      home-manager-stable,
       system-manager,
       nix-system-graphics,
       ...
     }@inputs:
     let
       inherit (self) outputs;
+
+      # NixOS hosts, deployed via deploy-rs to <name>.neunet.ca
+      hosts = [
+        "appeal-to-reason"
+        "long-view"
+        "within-reason"
+        "recent-convert"
+        "size-isnt-everything"
+        "space-monster"
+      ];
+
+      mkHost =
+        name:
+        nixpkgs-stable.lib.nixosSystem {
+          modules = [
+            ./machines/${name}/configuration.nix
+            home-manager-stable.nixosModules.home-manager
+            {
+              nixpkgs.config.allowUnfree = true;
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.neudoerf = import ./home-manager/home-server.nix;
+              };
+            }
+          ];
+        };
     in
     {
-      nixosConfigurations = {
-        appeal-to-reason = nixpkgs.lib.nixosSystem {
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
-          system = "x86_64-linux";
-          modules = [
-            ./machines/appeal-to-reason/configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                extraSpecialArgs = { inherit inputs; };
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.neudoerf = import ./home-manager/home-cli.nix;
-              };
-            }
-          ];
+      nixosConfigurations = nixpkgs.lib.genAttrs hosts mkHost;
+
+      deploy.nodes = nixpkgs.lib.genAttrs hosts (name: {
+        hostname = "${name}.neunet.ca";
+        fastConnection = true;
+        profiles.system = {
+          user = "root";
+          path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.${name};
         };
-        long-view = nixpkgs.lib.nixosSystem {
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
-          system = "x86_64-linux";
-          modules = [
-            ./machines/long-view/configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                extraSpecialArgs = { inherit inputs; };
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.neudoerf = import ./home-manager/home-cli.nix;
-              };
-            }
-          ];
-        };
-        within-reason = nixpkgs.lib.nixosSystem {
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
-          system = "x86_64-linux";
-          modules = [
-            ./machines/within-reason/configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                extraSpecialArgs = { inherit inputs; };
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.neudoerf = import ./home-manager/home-cli.nix;
-              };
-            }
-          ];
-        };
-        recent-convert = nixpkgs.lib.nixosSystem {
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
-          system = "x86_64-linux";
-          modules = [
-            ./machines/recent-convert/configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                extraSpecialArgs = { inherit inputs; };
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.neudoerf = import ./home-manager/home-cli.nix;
-              };
-            }
-          ];
-        };
-        size-isnt-everything = nixpkgs.lib.nixosSystem {
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
-          system = "x86_64-linux";
-          modules = [
-            ./machines/size-isnt-everything/configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                extraSpecialArgs = { inherit inputs; };
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.neudoerf = import ./home-manager/home-cli.nix;
-              };
-            }
-          ];
-        };
-        space-monster = nixpkgs.lib.nixosSystem {
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
-          system = "x86_64-linux";
-          modules = [
-            ./machines/space-monster/configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                extraSpecialArgs = { inherit inputs; };
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.neudoerf = import ./home-manager/home-cli.nix;
-              };
-            }
-          ];
-        };
-      };
-      deploy.nodes = {
-        appeal-to-reason = {
-          hostname = "appeal-to-reason.neunet.ca";
-          fastConnection = true;
-          profiles.system = {
-            user = "root";
-            path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.appeal-to-reason;
-          };
-        };
-        long-view = {
-          hostname = "long-view.neunet.ca";
-          fastConnection = true;
-          profiles.system = {
-            user = "root";
-            path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.long-view;
-          };
-        };
-        within-reason = {
-          hostname = "within-reason.neunet.ca";
-          fastConnection = true;
-          profiles.system = {
-            user = "root";
-            path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.within-reason;
-          };
-        };
-        recent-convert = {
-          hostname = "recent-convert.neunet.ca";
-          fastConnection = true;
-          profiles.system = {
-            user = "root";
-            path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.recent-convert;
-          };
-        };
-        size-isnt-everything = {
-          hostname = "size-isnt-everything.neunet.ca";
-          fastConnection = true;
-          profiles.system = {
-            user = "root";
-            path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.size-isnt-everything;
-          };
-        };
-        space-monster = {
-          hostname = "10.1.50.20";
-          fastConnection = true;
-          profiles.system = {
-            user = "root";
-            path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.space-monster;
-          };
-        };
-      };
+      });
+
       darwinConfigurations.nostalgia-for-infinity = inputs.darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         pkgs = import inputs.nixpkgs { system = "aarch64-darwin"; };
